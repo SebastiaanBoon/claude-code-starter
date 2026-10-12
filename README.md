@@ -19,18 +19,35 @@ Claude Code laadt `CLAUDE.local.md` automatisch bij elke start, naast de `CLAUDE
 Skills in `.claude/skills/` start je met `/naam`. Zie de documentatie van Claude Code over
 [CLAUDE.local.md](https://code.claude.com/docs/en/memory) en [skills](https://code.claude.com/docs/en/skills).
 
-## Installeren
+## Wat je typt in Claude Code
 
-1. Clone deze repo één keer naar je laptop.
-2. Ga in PowerShell naar de map van je klantrepo en draai:
+Open VS Code in de map van een klantrepo en start Claude Code in de terminal. Daarna:
 
-   ```powershell
-   & <pad naar claude-code-starter>\install.ps1
+1. Typ:
+
+   ```text
+   Zet github.com/SebastiaanBoon/claude-code-starter in deze repo. Clone hem naast deze repo als hij er
+   nog niet staat, en draai install.ps1 met deze repo als doel.
    ```
 
-   Of vraag het Claude Code: "Installeer claude-code-starter in deze repo met install.ps1 uit
-   `<pad naar claude-code-starter>`."
-3. Start Claude Code in de klantrepo. Je werkregels zijn er meteen.
+   Claude Code vraagt akkoord voor de commando's. Kijk mee wat hij doet.
+2. Sluit Claude Code en start hem opnieuw in dezelfde map. Bij het starten leest hij je werkregels.
+3. Typ `/omgevingsscan`. Hij leest de repo, laat je het resultaat zien en wacht op jouw controle.
+4. Na het nalezen en aanvullen: "Klopt, maak de branch en de pull request."
+
+Onderweg, de rest van de week:
+
+- Stuur je hem bij op iets wat vaker voorkomt: "Zet dit in mijn werkregels."
+- Werkte een klus goed en ga je hem vaker doen: "Leg vast wat we net deden als skill."
+- Iets uitzoeken wat je met de hand nooit zou doen: `/nooit-met-de-hand`.
+
+## Zonder Claude Code installeren
+
+Clone deze repo één keer, ga in PowerShell naar de map van je klantrepo en draai:
+
+```powershell
+& <pad naar claude-code-starter>\install.ps1
+```
 
 Opnieuw draaien kan altijd: de skills worden bijgewerkt, je eigen `CLAUDE.local.md` blijft staan.
 
