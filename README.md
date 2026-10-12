@@ -1,6 +1,6 @@
 # claude-code-starter
 
-Werkregels en twee skills voor Claude Code, die je in de repo van een klant zet zonder dat ze in git
+Werkregels en een skill voor Claude Code, die je in de repo van een klant zet zonder dat ze in git
 terechtkomen. Claude Code gebruikt ze voortaan bij elke start in die repo, en de klantrepo blijft
 schoon.
 
@@ -10,13 +10,12 @@ schoon.
 |---|---|
 | `CLAUDE.local.md` | Je persoonlijke werkregels, met de verkeersregels erin. Groeit mee: elke correctie die vaker voorkomt, wordt een regel |
 | `.claude/skills/omgevingsscan/` | De skill `/omgevingsscan`: documenteert hoe de omgeving eruitziet en levert dat op als pull request |
-| `.claude/skills/nooit-met-de-hand/` | De skill `/nooit-met-de-hand`: zoekt iets uit in de hele repo wat met de hand te veel werk is |
 
-Alle drie komen in `.git/info/exclude`. Dat is een lokaal ignore-bestand van git: het wordt zelf niet
+Beide komen in `.git/info/exclude`. Dat is een lokaal ignore-bestand van git: het wordt zelf niet
 gedeeld en verandert niets aan de `.gitignore` van de klant.
 
 Claude Code laadt `CLAUDE.local.md` automatisch bij elke start, naast de `CLAUDE.md` van het team.
-Skills in `.claude/skills/` start je met `/naam`. Zie de documentatie van Claude Code over
+Een skill in `.claude/skills/` start je met `/naam`. Zie de documentatie van Claude Code over
 [CLAUDE.local.md](https://code.claude.com/docs/en/memory) en [skills](https://code.claude.com/docs/en/skills).
 
 ## Wat je typt in Claude Code
@@ -39,7 +38,6 @@ Onderweg, de rest van de week:
 
 - Stuur je hem bij op iets wat vaker voorkomt: "Zet dit in mijn werkregels."
 - Werkte een klus goed en ga je hem vaker doen: "Leg vast wat we net deden als skill."
-- Iets uitzoeken wat je met de hand nooit zou doen: `/nooit-met-de-hand`.
 
 ## Zonder Claude Code installeren
 
@@ -49,7 +47,7 @@ Clone deze repo één keer, ga in PowerShell naar de map van je klantrepo en dra
 & <pad naar claude-code-starter>\install.ps1
 ```
 
-Opnieuw draaien kan altijd: de skills worden bijgewerkt, je eigen `CLAUDE.local.md` blijft staan.
+Opnieuw draaien kan altijd: de skill wordt bijgewerkt, je eigen `CLAUDE.local.md` blijft staan.
 
 ## Wat wel in git komt
 
