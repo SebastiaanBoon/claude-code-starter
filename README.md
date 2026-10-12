@@ -1,34 +1,53 @@
 # claude-code-starter
 
-Startpunt om met Claude Code te werken in de repo van een klant. Je kopieert twee bestanden met
-werkregels naar je klantrepo, geeft Claude Code de opdracht voor een omgevingsscan, en levert het
-resultaat op als pull request. Daarna weet elke nieuwe sessie hoe het bij deze klant zit, en hoef je
-dat niet steeds opnieuw uit te leggen.
+Werkregels en twee skills voor Claude Code, die je in de repo van een klant zet zonder dat ze in git
+terechtkomen. Claude Code gebruikt ze voortaan bij elke start in die repo, en de klantrepo blijft
+schoon.
 
-## Wat zit erin
+## Wat er in je klantrepo komt
 
 | Bestand | Wat |
 |---|---|
-| [AGENTS.md](AGENTS.md) | Werkregels die AI-assistenten in een map lezen. Kopieer naar de root van je klantrepo en laat ze meegroeien |
-| [CLAUDE.md](CLAUDE.md) | Eén regel die Claude Code naar AGENTS.md laat kijken. Kopieer mee |
-| [opdrachten/omgevingsscan.md](opdrachten/omgevingsscan.md) | De opdracht voor de eerste omgevingsscan van een klant |
-| [opdrachten/nooit-met-de-hand.md](opdrachten/nooit-met-de-hand.md) | Ideeën voor uitzoekwerk dat je met de hand nooit zou doen |
-| [sjablonen/omgevingsscan.md](sjablonen/omgevingsscan.md) | Hoe de documentatie van de scan eruitziet |
+| `CLAUDE.local.md` | Je persoonlijke werkregels, met de verkeersregels erin. Groeit mee: elke correctie die vaker voorkomt, wordt een regel |
+| `.claude/skills/omgevingsscan/` | De skill `/omgevingsscan`: documenteert hoe de omgeving eruitziet en levert dat op als pull request |
+| `.claude/skills/nooit-met-de-hand/` | De skill `/nooit-met-de-hand`: zoekt iets uit in de hele repo wat met de hand te veel werk is |
 
-## Zo begin je
+Alle drie komen in `.git/info/exclude`. Dat is een lokaal ignore-bestand van git: het wordt zelf niet
+gedeeld en verandert niets aan de `.gitignore` van de klant.
 
-1. Open de repo van een klant waar je nu aan werkt in VS Code en start Claude Code.
-2. Kopieer `AGENTS.md` en `CLAUDE.md` uit deze repo naar de root van de klantrepo. Staat er al een
-   AGENTS.md of CLAUDE.md, voeg de regels dan toe in plaats van te overschrijven.
-3. Geef Claude Code de opdracht uit [opdrachten/omgevingsscan.md](opdrachten/omgevingsscan.md). Plak
-   hem in zijn geheel, of zeg: "Lees opdrachten/omgevingsscan.md uit claude-code-starter en voer hem uit".
-4. Lees het resultaat na. Wat niet klopt, zeg je in het gesprek. Wat hij niet kon weten, vul je zelf aan.
-5. Laat hem een branch en een pull request maken. Een collega reviewt, net als bij code.
+Claude Code laadt `CLAUDE.local.md` automatisch bij elke start, naast de `CLAUDE.md` van het team.
+Skills in `.claude/skills/` start je met `/naam`. Zie de documentatie van Claude Code over
+[CLAUDE.local.md](https://code.claude.com/docs/en/memory) en [skills](https://code.claude.com/docs/en/skills).
+
+## Installeren
+
+1. Clone deze repo één keer naar je laptop.
+2. Ga in PowerShell naar de map van je klantrepo en draai:
+
+   ```powershell
+   & <pad naar claude-code-starter>\install.ps1
+   ```
+
+   Of vraag het Claude Code: "Installeer claude-code-starter in deze repo met install.ps1 uit
+   `<pad naar claude-code-starter>`."
+3. Start Claude Code in de klantrepo. Je werkregels zijn er meteen.
+
+Opnieuw draaien kan altijd: de skills worden bijgewerkt, je eigen `CLAUDE.local.md` blijft staan.
+
+## Wat wel in git komt
+
+De omgevingsscan zelf. `/omgevingsscan` schrijft `docs/omgevingsscan.md` en zet regels voor hoe de
+omgeving eruit moet zien in `AGENTS.md`, het gedeelde bestand voor het hele team. Die twee gaan na
+jouw akkoord mee in een pull request, zodat een collega ze reviewt.
+
+Heeft de repo een `AGENTS.md` en geen `CLAUDE.md`, dan zet de installer `@AGENTS.md` bovenaan je
+`CLAUDE.local.md`. Zonder die regel leest Claude Code `AGENTS.md` niet meer zodra er een
+`CLAUDE.local.md` is.
 
 ## Daarna
 
-- Corrigeer je Claude Code op iets wat vaker voorkomt, zeg dan: "zet dit in de werkregels". Zo groeit
-  AGENTS.md mee en werkt hij na een paar weken zoals jij werkt.
+- Corrigeer je Claude Code op iets wat vaker voorkomt, zeg dan: "zet dit in mijn werkregels". Zo
+  groeit `CLAUDE.local.md` mee.
 - Doe je een klus voor de tweede keer en ging het goed? Zeg: "leg vast wat we net deden als skill".
   Een skill bouw je niet vooraf, die groeit uit je werk.
 - Zet nooit wachtwoorden, secrets of klantdata in deze bestanden.

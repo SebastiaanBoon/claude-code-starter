@@ -1,7 +1,7 @@
 # Werkregels
 
-Deze regels gelden voor elke AI-assistent die in deze repo werkt. Ze groeien mee: corrigeer ik je op
-iets wat vaker voorkomt, stel dan voor het hier als regel toe te voegen.
+Persoonlijke werkregels voor Claude Code in deze repo. Dit bestand staat niet in git: het staat in
+.git/info/exclude. Claude Code leest het bij elke start, naast de CLAUDE.md of AGENTS.md van het team.
 
 ## Verkeersregels
 
@@ -21,7 +21,7 @@ iets wat vaker voorkomt, stel dan voor het hier als regel toe te voegen.
 - Berichten aan de klant schrijf je op het niveau van de ontvanger, zonder technische details die
   hij niet zelf uitvoert.
 
-## Deze omgeving
+## Geleerd bij deze klant
 
-Wordt ingevuld door de omgevingsscan (zie claude-code-starter, opdrachten/omgevingsscan.md):
-hoe de omgeving eruitziet en welke regels er gelden voor lagen, naamgeving, uitrol en rechten.
+Corrigeer ik je op iets wat vaker voorkomt, stel dan voor het hier als regel toe te voegen. Zo groeit
+dit bestand mee en werk je na een paar weken zoals ik werk.
