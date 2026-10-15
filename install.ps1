@@ -9,7 +9,7 @@ Of met een doelmap:
 
 Wat het doet:
 - CLAUDE.local.md met je werkregels in de root (een bestaande wordt niet overschreven)
-- de skill omgevingsscan in .claude/skills (wordt bijgewerkt)
+- de skills omgevingsscan en loop in .claude/skills (worden bijgewerkt)
 - al deze paden in .git/info/exclude, zodat git ze negeert zonder dat .gitignore verandert
 #>
 param(
@@ -49,7 +49,7 @@ if ($hasAgents -and -not $hasClaude) {
 }
 
 # Skills: altijd de nieuwste versie
-$skills = @('omgevingsscan')
+$skills = @('omgevingsscan', 'loop')
 foreach ($skill in $skills) {
     $dest = Join-Path $Target ".claude\skills\$skill"
     New-Item -ItemType Directory -Force $dest | Out-Null

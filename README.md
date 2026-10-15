@@ -10,6 +10,7 @@ schoon.
 |---|---|
 | `CLAUDE.local.md` | Je persoonlijke werkregels, met de verkeersregels erin. Groeit mee: elke correctie die vaker voorkomt, wordt een regel |
 | `.claude/skills/omgevingsscan/` | De skill `/omgevingsscan`: documenteert hoe de omgeving eruitziet en levert dat op als pull request |
+| `.claude/skills/loop/` | De skill `/loop`: leest of bewerkt een Microsoft Loop-pagina via een browser waarin je bent ingelogd |
 
 Beide komen in `.git/info/exclude`. Dat is een lokaal ignore-bestand van git: het wordt zelf niet
 gedeeld en verandert niets aan de `.gitignore` van de klant.
